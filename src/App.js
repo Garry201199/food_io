@@ -12,17 +12,18 @@ function App() {
   return (
     <AnimatePresence exitBeforeEnter>
       <AuthcontextProvider>
-        <div className="w-screen select-none  flex flex-col ">
+        <div className="w-screen select-none bg-[#16181d]  flex flex-col ">
           <Routes>
             <Route element={<ProtectedRoutes />}>
-                <Route path="/" element={<>
-                <Header/>
-                <MainContainer />
+                <Route path="/" element={
+                <>
+                  <Header/>
+                  <MainContainer />
                 </>} />
                 <Route path="/createItem" element={
                   <>
-                  <Header/>
-                  <CreateContainer />
+                    <Header/>
+                    <CreateContainer />
                   </>
                 
                 } />

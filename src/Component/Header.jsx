@@ -1,9 +1,8 @@
 import React, { useContext, useState } from "react";
 import avatar from "../img/avatar.png";
-import icon from "../img/icons.png";
+import icon from "../img/Icons/dosa.png";
 import { Link} from "react-router-dom";
 import AuthContext from "../Context/AuthContext";
-import useAuthStatus from "../Hooks/useAuthStatus";
 import UserProfile from "./UserProfile";
 
 const Header = () => {
@@ -12,23 +11,23 @@ const Header = () => {
   return (
     <div>
       {/* Desktop AppBar  */}
-      <div className="navbar z-10 top-0 fixed hidden px-8  md:flex bg-slate-800  ">
-        <Link to="/" className="flex-1">
-          <img src={icon} className="h-16 w-16" alt="icons"></img>
+      <div className=" w-full py-3 justify-between  z-10 top-0 fixed hidden px-8  md:flex bg-[#1f2229]  ">
+        <Link to="/" className="flex items-center ml-8 justify-center">
+          <img src={icon} className="h-12 w-12 bg-inherit" alt="icons"></img>
           <button className="px-3 font-Pop normal-case text-white font-semibold  text-2xl">Food.io</button>
         </Link>
-        <div className="flex-none">
-          <ul className="menu normal-case gap-x-8  text-lg menu-horizontal p-0">
-            <li className="cursor-pointer">
+        <div className="flex items-center justify-center mr-8">
+          <ul className=" normal-case gap-x-12 text-lg flex  justify-center items-center ">
+            <li className="cursor-pointer hover:text-white duration-300 transition-all">
               Home 
             </li>
-            <li className="cursor-pointer">
+            <li className="cursor-pointer hover:text-white duration-300 transition-all">
               Menu 
             </li>
-            <li className="cursor-pointer">
-              About Us 
+            <li className="cursor-pointer hover:text-white duration-300 transition-all flex gap-x-1 ">
+              About <span> Us</span> 
             </li>
-            <li className="cursor-pointer">
+            <li className="cursor-pointer hover:text-white duration-300 transition-all">
               Services 
             </li>
           </ul>
@@ -77,7 +76,6 @@ const Header = () => {
             <label
               tabIndex="0"
               htmlFor="my-modal-3"
-             
               className="btn modal-button btn-ghost btn-circle avatar"
             >
               <div className="w-12 h-12 rounded-full">
@@ -99,9 +97,9 @@ const Header = () => {
       </div>
 
       {/* Mobile AppBar  */}
-      <div className=" navbar z-10 fixed px-4 md:hidden  bg-slate-800">
-        <div className="navbar-start">
-        <div className="dropdown dropdown-content  px-3">
+      <div className=" w-full bg-[#1b1d20] py-3 z-10 fixed  flex justify-between items-center px-2 md:hidden ">
+        <div className="">
+        <div className="dropdown dropdown-content ">
             <label tabIndex="0" className="btn  btn-ghost btn-circle">
               <div className="indicator">
                 <svg
@@ -141,11 +139,11 @@ const Header = () => {
           </div>
           
         </div>
-        <div className="navbar-center">
-          <img src={icon} className="h-16 w-18" alt="icons"></img>
+        <div className="flex justify-center items-center ">
+          <img src={icon} className="h-12 w-12" alt="icons"></img>
           <Link to='/' className="px-3 font-semibold text-white font-Pop normal-case text-2xl">Food.io</Link>
         </div>
-        <div className="navbar-end">
+        <div className="">
           <div className="dropdown dropdown-end">
             <label onClick={()=> setOpenProfile(!openProfile)} tabIndex="0" className="btn btn-ghost btn-circle avatar">
               <div className="w-12 h-12 rounded-full">

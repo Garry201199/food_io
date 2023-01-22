@@ -4,21 +4,18 @@ import avatar from "../img/avatar.png";
 import { MdAdd,  MdLogin, MdLogout } from "react-icons/md";
 import useAuthStatus from "../Hooks/useAuthStatus";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion ,AnimatePresence } from "framer-motion";
 const UserProfile = ({setOpenProfile, openProfile}) => {
   const { currentUser, onlogOut } = useContext(AuthContext);
   const { loggedIn } = useAuthStatus();
   const navigate = useNavigate()
   return (
+   <AnimatePresence>
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ ease: "easeInOut" }}
+      initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       tabIndex="0"
-      className="
-      dropdown-content
-      "
+      className="dropdown-content "
     >
       <div className="md:p-8 p-6  max-w-96 min-w-max md:w-96 relative bg-gray-700 rounded">
         <div className="absolute p-1 right-0 top-0">
@@ -66,11 +63,11 @@ const UserProfile = ({setOpenProfile, openProfile}) => {
     }}
     animate={{ rotate: 20 }}
     transition={{
-      yoyo: Infinity,
+      repeat: Infinity,
       from: 0,
       duration: 0.2,
       ease: 'easeInOut',
-      type: 'tween',
+      repeatType:'reverse',
     }}
   >
     👋
@@ -140,6 +137,7 @@ focus:shadow-outline focus:outline-none"
       <div className="w-10/12 h-2 mx-auto bg-[#3abff8] rounded-b opacity-50" />
       <div className="w-9/12 h-2 mx-auto bg-[#3abff8] rounded-b opacity-25" />
     </motion.div>
+    </AnimatePresence>
   );
 };
 

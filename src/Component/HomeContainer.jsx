@@ -23,7 +23,7 @@ const HomeContainer = () => {
         <div className="flex p-1 bg-orange-100 rounded-full font-semibold text-slate-800 items-center  justify-center ">
           <p className="px-1 text-orange-600">Bike Delivery</p>
           <div className="w-10 h-10 rounded-full shadow-2xl drop-shadow-2xl bg-white overflow-hidden">
-            <img
+            <img lazy
               className="w-full h-full object-contain"
               src={bike}
               alt="bike"
@@ -66,6 +66,7 @@ const HomeContainer = () => {
         {/* bg image */}
         <img
           className="h-[420px] ml-auto w-full md:h-[500px] lg:w-auto lg:h-[650px]  "
+          lazy="true"
           src={bg}
           alt="bg"
         />
@@ -83,7 +84,7 @@ const HomeContainer = () => {
             justify-center  bg-whiteAlpha backdrop-blur-sm 
             lg:p-4 md:p-3 p-2 rounded-2xl "
               >
-                <img lazy
+                <img lazy='true'
                   src={i.imgsrc}
                   className="lg:w-40  md:w-32 w-20 md:-mt-16  -mt-10 lg:-mt-24"
                   alt="I5"
